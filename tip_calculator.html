@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="tip.css">
+    </head>
+    
+    
+    
+<body>
+    <h1 id="heading">Tip Calculator</h1>
+    <p id="description">The Tip Calculator will calculate the tip amount you should leave for your server. In the U.S. 15%-20% is standard.</p>
+    
+    <form id="calculator_form" action="javascript:void(calculate())"> 
+        <label id="price_label">Price $</label>
+        <input type="number" id="price" name="price" value="50" required>
+        <br>
+        
+        <label id="tip_percentage">Tip %</label>
+        <input type="number" id="percentage" name="percentage" value="20" required>
+        <br>
+        
+        <span id="tip"></span>
+        <br>
+        
+        <input id="calculate" name="calculate" type="submit" value="Calculate"> 
+        <br>
+        
+        <input type="reset" id="form_reset" value="Reset">
+        <br>
+        
+    </form>
+    
+    
+    
+    
+<script>
+
+    var submitButton = document.getElementById("calculate"); 
+    
+submitButton.onclick = function calculate(){
+    
+    var price = Number(document.getElementById('price').value);
+    var percentage = document.getElementById('percentage').value;
+    var yourTip = price * (percentage / 100);
+   
+    document.getElementById("tip").innerHTML= "$" + yourTip.toFixed(2);
+}
+    
+</script>
+    
+    
+    
+    
+</body>
+</html>
